@@ -1,0 +1,15 @@
+D:\Programming\Projects\git\C#\go circles\GoCircles\Circles\bin\Debug\netcoreapp3.1\Circles.exe
+D:\Programming\Projects\git\C#\go circles\GoCircles\Circles\bin\Debug\netcoreapp3.1\Circles.deps.json
+D:\Programming\Projects\git\C#\go circles\GoCircles\Circles\bin\Debug\netcoreapp3.1\Circles.runtimeconfig.json
+D:\Programming\Projects\git\C#\go circles\GoCircles\Circles\bin\Debug\netcoreapp3.1\Circles.runtimeconfig.dev.json
+D:\Programming\Projects\git\C#\go circles\GoCircles\Circles\bin\Debug\netcoreapp3.1\Circles.dll
+D:\Programming\Projects\git\C#\go circles\GoCircles\Circles\bin\Debug\netcoreapp3.1\Circles.pdb
+D:\Programming\Projects\git\C#\go circles\GoCircles\Circles\obj\Debug\netcoreapp3.1\Circles.csprojAssemblyReference.cache
+D:\Programming\Projects\git\C#\go circles\GoCircles\Circles\obj\Debug\netcoreapp3.1\Circles.Form1.resources
+D:\Programming\Projects\git\C#\go circles\GoCircles\Circles\obj\Debug\netcoreapp3.1\Circles.csproj.GenerateResource.cache
+D:\Programming\Projects\git\C#\go circles\GoCircles\Circles\obj\Debug\netcoreapp3.1\Circles.AssemblyInfoInputs.cache
+D:\Programming\Projects\git\C#\go circles\GoCircles\Circles\obj\Debug\netcoreapp3.1\Circles.AssemblyInfo.cs
+D:\Programming\Projects\git\C#\go circles\GoCircles\Circles\obj\Debug\netcoreapp3.1\Circles.csproj.CoreCompileInputs.cache
+D:\Programming\Projects\git\C#\go circles\GoCircles\Circles\obj\Debug\netcoreapp3.1\Circles.dll
+D:\Programming\Projects\git\C#\go circles\GoCircles\Circles\obj\Debug\netcoreapp3.1\Circles.pdb
+D:\Programming\Projects\git\C#\go circles\GoCircles\Circles\obj\Debug\netcoreapp3.1\Circles.genruntimeconfig.cache

@@ -30,12 +30,43 @@ namespace Circles
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.mainCircle = new System.Windows.Forms.PictureBox();
+            this.mainTimer = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.mainCircle)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // mainCircle
+            // 
+            this.mainCircle.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.mainCircle.Location = new System.Drawing.Point(346, 330);
+            this.mainCircle.Name = "mainCircle";
+            this.mainCircle.Size = new System.Drawing.Size(119, 107);
+            this.mainCircle.TabIndex = 3;
+            this.mainCircle.TabStop = false;
+            // 
+            // mainTimer
+            // 
+            this.mainTimer.Enabled = true;
+            this.mainTimer.Interval = 32;
+            this.mainTimer.Tick += new System.EventHandler(this.mainTimerEvent);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(742, 449);
+            this.Controls.Add(this.mainCircle);
+            this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.mainCircle)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.PictureBox mainCircle;
+        private System.Windows.Forms.Timer mainTimer;
     }
 }
 
