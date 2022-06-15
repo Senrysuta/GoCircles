@@ -16,6 +16,7 @@ namespace Circles
         Random random = new Random();
         int NumberLeft = 1;
         int NumberTop = 0;
+        List<PictureBox> pictureBoxes = new List<PictureBox>();
 
         public Form1()
         {
@@ -24,77 +25,138 @@ namespace Circles
             path.AddEllipse(0, 0, mainCircle.Width, mainCircle.Height);
             mainCircle.Region = new Region(path);
 
+            pictureBoxes.Add(mainCircle);
+
 
         }
 
         private void mainTimerEvent(object sender, EventArgs e)
-        {
-
-            moveCircle();
-
-           
+        { 
+            moveCircle(); 
         }
 
         private void moveCircle()
         {
 
-            checkBorder();
-            //label1.Text = Number.ToString();
 
-            if (NumberLeft == 0 && NumberTop == 0)
-            {
-                mainCircle.Left -= speed;
-                mainCircle.Top -= speed-1;
-            }
-                
-            else if (NumberLeft == 1 && NumberTop == 1)
-            {
-                mainCircle.Left += speed;
-                mainCircle.Top += speed+1;
-            }
 
-            else if (NumberLeft == 0 && NumberTop == 1)
+            foreach(PictureBox Circles in pictureBoxes)
             {
-                mainCircle.Left -= speed;
-                mainCircle.Top += speed+1;
-            }
+                if (Circles.Left < 0)
+                {
+                    pictureBoxes.Add(createPictureBox(Circles.Width, Circles.Height, Circles.Left, Circles.Top));
+                    Circles.AccessibleDescription = "1";
+                    Circles.Tag = random.Next(2).ToString();
 
-            else if (NumberLeft == 1 && NumberTop == 0)
-            {
-                mainCircle.Left += speed;
-                mainCircle.Top -= speed-1;
-            }
+                }
+                else if (Circles.Left > 623)
+                {
+                    pictureBoxes.Add(createPictureBox(Circles.Width, Circles.Height, Circles.Left, Circles.Top));
+                    Circles.AccessibleDescription = "0";
+                    Circles.Tag = random.Next(2).ToString();
+
+                }
+                else if (Circles.Top < 0)
+                {
+                    pictureBoxes.Add(createPictureBox(Circles.Width, Circles.Height, Circles.Left, Circles.Top));
+                    Circles.Tag = "1";
+                    Circles.AccessibleDescription = random.Next(2).ToString();
+
+                }
+                else if (Circles.Top > 338)
+                {
+                    pictureBoxes.Add(createPictureBox(Circles.Width, Circles.Height, Circles.Left, Circles.Top));
+                    Circles.Tag = "0";
+                    Circles.AccessibleDescription = random.Next(2).ToString();
+
+                }
+
+                if (Circles.AccessibleDescription == "0" && Circles.Tag.ToString() == "0")
+                {
+                    Circles.Left -= speed;
+                    Circles.Top -= speed - 2;
+                }
+
+                else if (NumberLeft == 1 && NumberTop == 1)
+                {
+                    Circles.Left += speed;
+                    Circles.Top += speed + 2;
+                }
+
+                else if (NumberLeft == 0 && NumberTop == 1)
+                {
+                    Circles.Left -= speed;
+                    Circles.Top += speed + 2;
+                }
+
+                else if (NumberLeft == 1 && NumberTop == 0)
+                {
+                    Circles.Left += speed;
+                    Circles.Top -= speed - 2;
+                }
+            }        
 
         }
 
-        private void checkBorder()
+       /* private void checkBorder()
         {
 
-            if (mainCircle.Left < 0)
+            foreach(PictureBox Circles in pictureBoxes)
             {
-                NumberLeft = 1;
-                NumberTop = random.Next(2);
-            }
-            else if (mainCircle.Left > 623)
-            {
-                NumberLeft = 0;
-                NumberTop = random.Next(2);
-            }
-            else if (mainCircle.Top < 0)
-            {
-                NumberTop = 1;
-                NumberLeft = random.Next(2);
-            }
-            else if (mainCircle.Top > 338)
-            {
-                NumberTop = 0;
-                NumberLeft = random.Next(2);
+                if (Circles.Left < 0)
+                {
+                    pictureBoxes.Add(createPictureBox(Circles.Width, Circles.Height, Circles.Left, Circles.Top));
+                    Circles.AccessibleDescription = "1";
+                    Circles.Tag = random.Next(2).ToString();
+
+                }
+                else if (Circles.Left > 623)
+                {
+                    pictureBoxes.Add(createPictureBox(Circles.Width, Circles.Height, Circles.Left, Circles.Top));
+                    Circles.AccessibleDescription = "0";
+                    Circles.Tag = random.Next(2).ToString();
+
+                }
+                else if (Circles.Top < 0)
+                {
+                    pictureBoxes.Add(createPictureBox(Circles.Width, Circles.Height, Circles.Left, Circles.Top));
+                    Circles.Tag = "1";
+                    Circles.AccessibleDescription = random.Next(2).ToString();
+
+                }
+                else if (Circles.Top > 338)
+                {
+                    pictureBoxes.Add(createPictureBox(Circles.Width, Circles.Height, Circles.Left, Circles.Top));
+                    Circles.Tag = "0";
+                    Circles.AccessibleDescription = random.Next(2).ToString();
+
+                }
             }
 
 
+        }*/
 
+        public PictureBox createPictureBox(int width, int height, int x, int y)
+        {
+            var pictureBox = new PictureBox
+            {
+                Name = "newCircle",
+                Size = new Size(width / 2, height / 2),
+                Location = new Point(x, y),
+                BackColor = Color.Blue,
+                BorderStyle = BorderStyle.FixedSingle,
+                Tag = "",
+                AccessibleDescription = ""
+            };
+
+            this.Controls.Add(pictureBox);
+
+            System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
+            path.AddEllipse(0, 0, pictureBox.Width, pictureBox.Height);
+            pictureBox.Region = new Region(path);
+
+
+            return pictureBox;
         }
-
-
     }      
 }

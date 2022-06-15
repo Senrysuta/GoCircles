@@ -37,7 +37,8 @@ namespace Circles
             // 
             // mainCircle
             // 
-            this.mainCircle.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.mainCircle.BackColor = System.Drawing.Color.Blue;
+            this.mainCircle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.mainCircle.Location = new System.Drawing.Point(346, 330);
             this.mainCircle.Name = "mainCircle";
             this.mainCircle.Size = new System.Drawing.Size(119, 107);
